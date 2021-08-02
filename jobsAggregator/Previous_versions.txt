@@ -1,0 +1,58 @@
+######WORLDOMETER 1###########
+
+# import scrapy
+
+# class CoronaupdateSpider(scrapy.Spider):
+#     name = 'coronaupdate'  #spider name(same as the file name)
+#     allowed_domains = [
+#         'www.worldometers.info/coronavirus/?fbclid=IwAR2ylYtt6UIBnQSmWXYrgg0ga6FkKbGHTtwICNnJulI1Goul9Kr6yTIC4ZE'
+#     ]
+#     #allowed domains should not contain the https protocol and the ending /
+
+#     start_urls = [
+#         'https://www.worldometers.info/coronavirus/?fbclid=IwAR2ylYtt6UIBnQSmWXYrgg0ga6FkKbGHTtwICNnJulI1Goul9Kr6yTIC4ZE/'
+#     ]
+
+#     #start_urls must add https if not already present
+
+#     def parse(self, response):
+#         country_name = response.css("a.mt_a::text").getall()
+#         #we should always return the data in the form of a dict,
+#         #thus we will be using yield()
+
+#         yield {'country': country_name}
+
+################################################################################################################################################################################################################################################################################################################################################################################################################
+
+######WORLDOMETER 2###########
+
+# import scrapy
+
+# class CoronaupdateSpider(scrapy.Spider):
+#     name = 'coronaupdate'  #spider name(same as the file name)
+#     allowed_domains = [
+#         'www.worldometers.info/coronavirus/?fbclid=IwAR2ylYtt6UIBnQSmWXYrgg0ga6FkKbGHTtwICNnJulI1Goul9Kr6yTIC4ZE'
+#     ]
+#     #allowed domains should not contain the https protocol and the ending /
+
+#     start_urls = [
+#         'https://www.worldometers.info/coronavirus/?fbclid=IwAR2ylYtt6UIBnQSmWXYrgg0ga6FkKbGHTtwICNnJulI1Goul9Kr6yTIC4ZE/'
+#     ]
+
+#     #start_urls must add https if not already present
+
+#     def parse(self, response):
+#         country_name = response.xpath("//a[@class='mt_a']")
+#         # we will be extracting link as well as text
+
+#         for country in country_name:
+#             name = country.xpath(".//text()").get()
+#             #starts with a . as we are selecting xpath on the selected object and not the response object
+#             link = country.xpath(".//@href").get()
+
+#             #we should always return the data in the form of a dict,
+#             #thus we will be using yield()
+#             yield {'countryName': name, 'CountryLink': link}
+#             #remember that yield is within the for loop
+
+################################################################################################################################################################################################################################################################################################################################################################################################################
